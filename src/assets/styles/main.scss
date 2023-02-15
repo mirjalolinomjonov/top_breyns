@@ -1,0 +1,53 @@
+@import "./tailwind";
+@import "./lesson-list";
+
+// RESET DEFAULT STYLES
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  background-color: #1E1E1E;
+}
+
+// SCROLLBAR
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff14;
+  border-radius: 3.5px;
+  transition: 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+// CONTAINER
+.container {
+  max-width: 1226px;
+  margin: 0px auto;
+  // padding: 0 15px;
+
+  @media (max-width: 1024px) {
+    max-width: 1024px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+  }
+}
