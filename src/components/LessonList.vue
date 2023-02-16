@@ -48,6 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 .aside {
+  height: 603px;
   position: relative;
   &::before {
     content: "";
@@ -56,11 +57,12 @@ export default {
     bottom: 0;
     height: 40px;
     width: 100%;
+    // background: linear-gradient(180deg, rgba(8, 8, 8, 0) 0%,  #1E1E1E 100%);
     background: linear-gradient(180deg, rgba(8, 8, 8, 0) 0%, rgba(8, 8, 8, 0.83) 63.54%, #080808 100%);
   }
 }
 .list-wrap {
-  max-height: 603px;
+  max-height: 100%;
   overflow-y: auto;
 }
 .list {
