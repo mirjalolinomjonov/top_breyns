@@ -1,61 +1,88 @@
 <template>
-  <footer class="pt-20 pb-10 flex justify-around">
-    <div>
-      <router-link to="/">
-        <img src="@/static/images/logo.png" alt="" />
-      </router-link>
-      <Paragraph
-        class="w-[342px] mt-3 mb-9"
-        color="#ffffff66"
-        paragraph="Онлайн курсы премиум качества от ведущих мастеров своей сферы"
-      />
-      <ul class="flex-center gap-4">
-        <li v-for="(item, index) in socials" :key="index">
-          <a href="" target="_blank">
-            <icon-base :name="item.icon" />
-          </a>
-        </li>
-      </ul>
-    </div>
-    <nav v-for="(item, index) in navLinks" :key="index" class="nav">
-      <ul class="nav-list">
-        <h3 class="nav-list__title">{{ item.title }}</h3>
-        <li
-          v-for="(link, index) in item.child"
-          :key="index"
-          class="nav-list__item"
+  <footer class="pt-20 pb-10 md:pb-0">
+    <div class="flex justify-between flex-wrap md:flex-col md:items-center md:gap-12">
+      <div class="md:text-center">
+        <router-link to="/" class="inline-block">
+          <img src="@/static/images/logo.png" alt="" />
+        </router-link>
+        <Paragraph
+          class="w-[342px] ls:w-[300px] mt-3 mb-9"
+          color="#ffffff66"
+          paragraph="Онлайн курсы премиум качества от ведущих мастеров своей сферы"
+        />
+        <ul class="flex-center gap-4 md:justify-center">
+          <li v-for="(item, index) in socials" :key="index">
+            <a href="" target="_blank">
+              <icon-base :name="item.icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <nav v-for="(item, index) in navLinks" :key="index" class="nav">
+        <ul class="nav-list md:text-center">
+          <h3 class="nav-list__title">{{ item.title }}</h3>
+          <li
+            v-for="(link, index) in item.child"
+            :key="index"
+            class="nav-list__item"
+          >
+            <router-link :to="link.link" class="nav-list__item-anchor">
+              {{ link.name }}
+            </router-link>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="md:text-center md:w-full">
+        <h3 class="nav-list__title">Новости</h3>
+        <p
+          class="
+            w-[323px]
+            ls:w-[300px]
+            text-[#ffffffe6] text-2xl
+            leading-[32px]
+            font-semibold
+            md:inline-block
+          "
         >
-          <router-link :to="link.link" class="nav-list__item-anchor">
-            {{ link.name }}
-          </router-link>
-        </li>
-      </ul>
-    </nav>
-    <div>
-      <h3 class="nav-list__title">Новости</h3>
-      <p
-        class="w-[323px] text-[#ffffffe6] text-2xl leading-[32px] font-semibold"
-      >
-        Новости, анонсы и скидки в нашем телеграме
+          Новости, анонсы и скидки в нашем телеграме
+        </p>
+        <a
+          class="
+            bg-[#38A5E0]
+            rounded-[10px]
+            py-3
+            px-[25.5px]
+            flex
+            justify-center
+            gap-2
+            text-[18px] text-white
+            font-medium
+            mt-5
+            transition
+            hover:bg-[#38bdf8]
+            md:w-full
+            md:rounded-none
+            text-center
+          "
+          href="#"
+          target="_blank"
+          ><icon-base name="telegram" /> Перейти</a
+        >
+      </div>
+    </div>
+
+    <div class="devider mt-14 mb-8 md:hidden"></div>
+    
+    <div class="flex-center gap-[40px] md:hidden">
+      <router-link to="/">
+        <img src="@/static/images/footer_logo.png" alt="" />
+      </router-link>
+      <p class="copyright-text">© 2021 TopBreyns</p>
+      <p class="copyright-text flex-center gap-2">
+        <icon-base name="lock" /> Secured with SSL
       </p>
-      <a
-        class="
-          bg-[#38A5E0]
-          rounded-[10px]
-          py-3
-          px-[25.5px]
-          inline-flex
-          gap-2
-          text-[18px] text-white
-          font-medium
-          mt-5
-          transition
-          hover:bg-[#38bdf8]
-        "
-        href="#"
-        target="_blank"
-        ><icon-base name="telegram" /> Перейти</a
-      >
     </div>
   </footer>
 </template>
@@ -161,5 +188,11 @@ export default {
       }
     }
   }
+}
+.copyright-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.2);
 }
 </style>
