@@ -1,6 +1,6 @@
 <template>
   <div class="teach xs:flex-col h-full">
-    <figure class="teach__img relative sm:w-max">
+    <figure class="teach__img relative sm:!w-max">
       <img
         v-if="img === 0"
         src="@/static/images/responsive_teach.png"
